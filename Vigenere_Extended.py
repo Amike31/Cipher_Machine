@@ -26,23 +26,19 @@ def extendKeyNumArr(p,k):
 def extendVigenereEncode(p,k):
     kNumArr = extendKeyNumArr(p,k)
     pNumArr = str2numArr(p)
-    print(f"ini sebelum encryp {len(pNumArr)}\n", pNumArr)
     cArr = []
     
     for i in range(len(p)):
         cArr.append((pNumArr[i] + kNumArr[i]) % 256)
-    print(f"ini hasil encryp {len(cArr)}\n", cArr)
     c = numArr2str(cArr)
     return c
 
 def extendVigenereDecode(c,k):
     kNumArr = extendKeyNumArr(c,k)
     cNumArr = str2numArr(c)
-    print(f"Ini sebelum decrypt {len(cNumArr)}\n",cNumArr)
     pArr = []
     for i in range(len(c)):
         pArr.append((cNumArr[i] - kNumArr[i]) % 256)
-    print(f"ini setelah di decrypt {len(pArr)}\n", pArr)
     p = numArr2str(pArr)
     return p
 
