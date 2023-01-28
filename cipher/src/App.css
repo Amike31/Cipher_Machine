@@ -2,7 +2,7 @@
   text-align: center;
 } */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -45,7 +45,7 @@
 
 /* .navItem {
   position: relative;
-} */
+} 
 
 .navItem{
   position: relative;
@@ -61,12 +61,12 @@
   font-weight: 500;
 }
 
-/* Add a hover effect for the dropdown button */
+/* Add a hover effect for the dropdown button 
 .navItem:hover .dropbtn {
   background-color: black;
   color: white;
 }
-/* Add styles for the dropdown menu */
+/* Add styles for the dropdown menu 
 .dropdown-content {
   display: none;
   position: absolute;
@@ -82,7 +82,7 @@
   padding: 10px;
   font-style: bold;
 }
-/* Show the dropdown menu on hover */
+/* Show the dropdown menu on hover 
 .navItem:hover .dropdown-content {
   display: block;
-}
+} */
