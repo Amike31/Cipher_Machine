@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import {InputString, InputFormula, InputMatrix} from './components/InputKey';
 
 function App() {
-  var name = 'Vigenere Standard';
+  var name = 'Hill';
   var inputType;
   if (name==='Hill') {
     inputType = 'matrix';
@@ -42,8 +42,7 @@ function GetInput(props) {
   
   function handleSubmit(event) {
     event.preventDefault();
-    alert(`Masukkan Text: ${text}`);
-    // alert(`Input 2: ${key}`);
+    alert(`Masukkan Text: ${text} ${inputKey.key}`);
   }
 
   let inputKey;
@@ -61,7 +60,7 @@ function GetInput(props) {
     <div className="InputForm">    
       <form onSubmit={handleSubmit}>
         <div className='text'>Enter Your Text :</div>
-        <textarea type="text" value={text} onChange={handleTextChange} />
+        <textarea type="text" value={text} onChange={handleTextChange} placeholder="Put Your Text Here..!" />
         <p>Input value: {text}</p>
         {inputKey}
         <button type="submit">Submit</button>
@@ -72,7 +71,7 @@ function GetInput(props) {
 
 function ShowResult(props) {
   let [result, setResult] = useState('');
-  result = "Dari komputasi";
+  result = "";
   function handleResultChange(event) {
     setResult(event.target.value);
   }
@@ -81,7 +80,7 @@ function ShowResult(props) {
     <div className="OutputForm">
       <div className='IOtext'>
         <div className='text'>Result :</div>
-        <textarea value={result}></textarea>
+        <textarea value={result} placeholder="The Result Will be Aappeared Here..!"></textarea>
       </div>
     </div>
   );
