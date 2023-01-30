@@ -1,25 +1,34 @@
 import React from 'react';
 import './Navbar.css';
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
-function Navbar() {
+export default function Navbar() {
   return (
-    <div class="navbar">
-      <NavItem name="Vigenere Standard" />
-      <NavItem name="Vigenere Auto Key" />
-      <NavItem name="Vigenere Extended" />
-      <NavItem name="Affine" />
-      <NavItem name="Palyfair" />
-      <NavItem name="Hill" />
-    </div>
-  );
-}
-  
-function NavItem(props) {
-  return(
-    <div class = "navItem">
-      <a href="\" class="dropbtn">{props.name}</a>
-    </div>
-  );
+    <nav className="nav">
+      <Link to="/" className="site-title">
+        Cipherian
+      </Link>
+      <ul>
+        <CustomLink to="/Vigenere-Standard">Vigenere Standard</CustomLink>
+        <CustomLink to="/Vigenere-AutoKey">Vigenere AutoKey</CustomLink>
+        <CustomLink to="/Vigenere-Extended">Vigenere Extended</CustomLink>
+        <CustomLink to="/Playfair">Playfair</CustomLink>
+        <CustomLink to="/Hill">Hill</CustomLink>
+        <CustomLink to="/Affine">Affine</CustomLink>
+      </ul>
+    </nav>
+  )
 }
 
-export default Navbar;
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+
+  return (
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  )
+}

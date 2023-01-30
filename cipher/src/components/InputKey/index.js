@@ -10,7 +10,7 @@ function InputString(props) {
   return (
     <div className='Key'> 
       <div className='text'>Enter Your Key :</div>
-      <input type="text" value={key} onChange={handleKeyChange} placeholder="Key can be a string.." />
+      <input type="text" name="keyString" value={key} onChange={handleKeyChange} placeholder="Key can be a string.." />
       <p>Input value: {key}</p>
     </div>
   );
