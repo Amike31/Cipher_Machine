@@ -4,11 +4,32 @@ import Navbar from './components/Navbar';
 import {InputString, InputFormula, InputMatrix} from './components/InputKey';
 
 function App() {
+  var name = 'Vigenere Standard';
+  var inputType;
+  if (name==='Hill') {
+    inputType = 'matrix';
+  }
+  else if (name==='Affine') {
+    inputType = 'formula';
+  }
+  else {
+    inputType = 'string';
+  }
+    
   return (
     <div className="App">
       <Navbar />
-      <GetInput type="matrix"/>
-      <ShowResult />
+      <div className='encryptPart'>
+        <h1>Encrypt Your Plaintext</h1>
+        <GetInput type={inputType}/>
+        <ShowResult />
+      </div>
+      <br />
+      <div className='decryptPart'>
+        <h1>Decrypt Your Ciphertext</h1>
+        <GetInput type={inputType}/>
+        <ShowResult />
+      </div>
     </div>
   );
 }
@@ -39,13 +60,9 @@ function GetInput(props) {
   return (
     <div className="InputForm">    
       <form onSubmit={handleSubmit}>
-        <div className='IOtext'>
-          <label>
-            Enter Your Text:
-          </label>
-          <textarea type="text" value={text} onChange={handleTextChange} />
-          <p>Input value: {text}</p>
-        </div>
+        <div className='text'>Enter Your Text :</div>
+        <textarea type="text" value={text} onChange={handleTextChange} />
+        <p>Input value: {text}</p>
         {inputKey}
         <button type="submit">Submit</button>
       </form>
@@ -63,13 +80,11 @@ function ShowResult(props) {
   return(
     <div className="OutputForm">
       <div className='IOtext'>
-        <label>Result:
-        </label>
+        <div className='text'>Result :</div>
         <textarea value={result}></textarea>
       </div>
     </div>
   );
 }
-
 
 export default App;
