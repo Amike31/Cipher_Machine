@@ -10,18 +10,7 @@ import Extended from './components/Pages/Vigenere_Extended';
 import AutoKey from './components/Pages/Vigenere_AutoKey';
 
 function App() {
-  // var name = 'Hill';
-  // var inputType;
-  // if (name==='Hill') {
-  //   inputType = 'matrix';
-  // }
-  // else if (name==='Affine') {
-  //   inputType = 'formula';
-  // }
-  // else {
-  //   inputType = 'string';
-  // }
-    
+
   return (
     <div className="App">
       <Navbar />
@@ -35,17 +24,6 @@ function App() {
           <Route path="/Hill" element={<Hill />} />
         </Routes>
       </div>
-      {/* <div className='encryptPart'>
-        <h1>Encrypt Your Plaintext</h1>
-        <GetInput type={inputType}/>
-        <ShowResult />
-      </div>
-      <br />
-      <div className='decryptPart'>
-        <h1>Decrypt Your Ciphertext</h1>
-        <GetInput type={inputType}/>
-        <ShowResult />
-      </div> */}
     </div>
   );
 }
