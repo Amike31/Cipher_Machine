@@ -17,14 +17,10 @@ function InputString(props) {
 }
 
 function InputFormula(props) {
-  const [formula1, setFormula1] = useState();
-  const [formula2, setFormula2] = useState();
+  const [formula, setFormula] = useState({formula1:null, formula2:null});
   
-  function handleFormula1Change(event){
-    setFormula1(+event.target.value);
-  }
-  function handleFormula2Change(event){
-    setFormula2(+event.target.value);
+  function handleFormulaChange(event){
+    setFormula({...formula,[event.target.name]: +event.target.value});
   }
   let mid = ` X + `;
 
@@ -32,58 +28,47 @@ function InputFormula(props) {
     <div className='Key'> 
       <label>
           Enter Your Key Formula:
-          <input type="text" value={formula1} onChange={handleFormula1Change} placeholder="3" />
+          <input type="text" name="formula1" value={formula.formula1} onChange={handleFormulaChange} placeholder="3" />
           {mid}
-          <input type="text" value={formula2} onChange={handleFormula2Change} placeholder="1" />
+          <input type="text" name="formula2" value={formula.formula2} onChange={handleFormulaChange} placeholder="1" />
       </label>
-      <p>Input value: {formula1}X + {formula2}</p>
+      <p>Input value: {formula.formula1}X + {formula.formula2}</p>
     </div>
   );
 }
 
 function InputMatrix(props) {
-  const [el1, setEl1] = useState();
-  const [el2, setEl2] = useState();
-  const [el3, setEl3] = useState();
-  const [el4, setEl4] = useState();
-  const [el5, setEl5] = useState();
-  const [el6, setEl6] = useState();
-  const [el7, setEl7] = useState();
-  const [el8, setEl8] = useState();
-  const [el9, setEl9] = useState();
-
-  function handleEl1Change(event) {setEl1(+event.target.value);}
-  function handleEl2Change(event) {setEl2(+event.target.value);}
-  function handleEl3Change(event) {setEl3(+event.target.value);}
-  function handleEl4Change(event) {setEl4(+event.target.value);}
-  function handleEl5Change(event) {setEl5(+event.target.value);}
-  function handleEl6Change(event) {setEl6(+event.target.value);}
-  function handleEl7Change(event) {setEl7(+event.target.value);}
-  function handleEl8Change(event) {setEl8(+event.target.value);}
-  function handleEl9Change(event) {setEl9(+event.target.value);}
+  const [el, setEl] = useState(
+    {el1:null, el2:null, el3:null,
+     el4:null, el5:null, el6:null,
+     el7:null, el8:null, el9:null}
+    );
+  function handleElChange(event) {
+    setEl({...el, [event.target.name]: +event.target.value});
+  }
 
   return (
     <div className='Key'> 
       <div className='text'> Enter Your Matrix :</div>
       <div className='matrixRow'>
-        <input type="text" value={el1} onChange={handleEl1Change} placeholder="17" />
-        <input type="text" value={el2} onChange={handleEl2Change} placeholder="17" />
-        <input type="text" value={el3} onChange={handleEl3Change} placeholder="15" />
+        <input type="text" name='el1' value={el.el1} onChange={handleElChange} placeholder="17" />
+        <input type="text" name='el2' value={el.el2} onChange={handleElChange} placeholder="17" />
+        <input type="text" name='el3' value={el.el3} onChange={handleElChange} placeholder="15" />
       </div>
       <div className='matrixRow'>
-        <input type="text" value={el4} onChange={handleEl4Change} placeholder="21" />
-        <input type="text" value={el5} onChange={handleEl5Change} placeholder="18" />
-        <input type="text" value={el6} onChange={handleEl6Change} placeholder="21" />
+        <input type="text" name='el4' value={el.el4} onChange={handleElChange} placeholder="21" />
+        <input type="text" name='el5' value={el.el5} onChange={handleElChange} placeholder="18" />
+        <input type="text" name='el6' value={el.el6} onChange={handleElChange} placeholder="21" />
       </div>
       <div className='matrixRow'>
-        <input type="text" value={el7} onChange={handleEl7Change} placeholder="2" />
-        <input type="text" value={el8} onChange={handleEl8Change} placeholder="2" />
-        <input type="text" value={el9} onChange={handleEl9Change} placeholder="19" />
+        <input type="text" name='el7' value={el.el7} onChange={handleElChange} placeholder="2" />
+        <input type="text" name='el8' value={el.el8} onChange={handleElChange} placeholder="2" />
+        <input type="text" name='el9' value={el.el9} onChange={handleElChange} placeholder="19" />
       </div>
       <p>Input Matrix:</p>
-      <p>{el1} {el2} {el3}</p>
-      <p>{el4} {el5} {el6}</p>
-      <p>{el7} {el8} {el9}</p>
+      <p>{el.el1} {el.el2} {el.el3}</p>
+      <p>{el.el4} {el.el5} {el.el6}</p>
+      <p>{el.el7} {el.el8} {el.el9}</p>
     </div>
   );
 
