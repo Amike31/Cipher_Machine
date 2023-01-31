@@ -39,7 +39,7 @@ def makeBigramArr(p):
     # FOR Message
     p = strOnlyAlphabets(p)
     p = p.upper()
-    p.replace("j","i")
+    p = p.replace("J","I")
     allBigram = []
     
     i = 0
