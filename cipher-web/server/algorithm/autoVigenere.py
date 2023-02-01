@@ -1,4 +1,25 @@
-from Vigenere_Standard import *
+def str2numArr(str):
+    s = str.upper()
+    arr = []
+    for c in s:
+        arr.append(ord(c)-65)
+    return arr
+
+def numArr2str(numArr):
+    str = ""
+    for num in numArr:
+        str += chr(num+65)
+    return str
+
+def strOnlyAlphabets(s):
+    ret = ""
+    if s.isalpha():
+        ret = s
+    else:
+        for c in s:
+            if c.isalpha():
+                ret += c
+    return ret 
 
 def makeAutoKey(p,k):
     p = strOnlyAlphabets(p)

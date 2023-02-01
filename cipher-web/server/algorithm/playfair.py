@@ -95,6 +95,12 @@ def playfairAlgo(p,k,type):
     for bigram in allBigram:
         ret += bigramShifted(bigram,key,type)
     return ret
+
+def playfairEncode(p,k):
+    return playfairAlgo(p,k,"e")
+
+def playfairDecode(p,k):
+    return playfairAlgo(p,k,"d").replace("X", "")
     
 if __name__ == "__main__":
     kw = "nama saya adalah beni subianto saudara dari sukiatmojo zainudin xaviec"

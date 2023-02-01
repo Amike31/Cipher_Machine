@@ -24,10 +24,6 @@ function InputString({children, endpoint, setResult, result}) {
         <Button children={children} endpoint={endpoint} text={text} kunci={key} setResult={setResult} />
       </div>
       <div className="OutputForm">
-        {/* <div className='IOtext'>
-            <div className='text'>Result :</div>
-            <textarea type='text' name='outputtext' value={props.result} placeholder="The Result Will be Aappeared Here..!"></textarea>
-        </div> */}
         <OutputBox result={result} />
       </div>
     </div>

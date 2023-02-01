@@ -2,36 +2,25 @@ import { useState } from 'react';
 import { InputString } from '../components/Form';
 
 function Extended() {
-  const [textP, setTextP] = useState('');
-  const [keyP, setKeyP] = useState('');
   const [resultP, setResultP] = useState('');
-
-  function handleComputeP(text,key) {
-    setTextP(text);
-    setKeyP(key);
-    setResultP(textP+` `+keyP);
-  }
-  
-  const [textC, setTextC] = useState('');
-  const [keyC, setKeyC] = useState('');
   const [resultC, setResultC] = useState('');
-
-  function handleComputeC(text,key) {
-    setTextC(text);
-    setKeyC(key);
-    setResultC(textC+` `+keyC);
-  }
 
   return (
     <div className="App">
-      <div className='encryptPart'>
+      <div className='cryptPart'>
         <h1>Encrypt Your Plaintext</h1>
-        <InputString handleCompute={handleComputeP} result={resultP} />
+        <InputString children="ENCRYPT"
+         result={resultP}
+         endpoint="extendVigenere/encode"
+         setResult={setResultP} />
       </div>
       <br />
-      <div className='decryptPart'>
-        <h1>Decrypt Your Ciphertext</h1>
-        <InputString handleCompute={handleComputeC} result={resultC} />
+      <div className='cryptPart'>
+        <h1>Decrypt Your Plaintext</h1>
+        <InputString children="DECRYPT"
+         result={resultC}
+         endpoint="extendVigenere/decode"
+         setResult={setResultC} />
       </div>
     </div>
   );
