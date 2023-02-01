@@ -74,29 +74,39 @@ def playfairD():
 @app.route("/affine/encode", methods = ["POST"])
 def affineE():
     p = request.json['text']
-    k = request.json['key']
+    f = request.json['key']
+    k = f['formula1'] , f['formula2']
     res = affineEncode(p, k)
     return {"result" : res}
 
 @app.route("/affine/decode", methods = ["POST"])
 def affineD():
     p = request.json['text']
-    k = request.json['key']
+    f = request.json['key']
+    k = f['formula1'] , f['formula2']
     res = affineDecode(p, k)
     return {"result" : res}
 
 @app.route("/hill/encode", methods = ["POST"])
 def hillE():
     p = request.json['text']
-    k = request.json['key']
-    res = hillEncode(p, k)
+    m = request.json['key']
+    a,b,c = m['el1'], m['el2'], m['el3']
+    d,e,f = m['el4'], m['el5'], m['el6']
+    g,h,i = m['el7'], m['el8'], m['el9']
+    k = [[a,b,c],[d,e,f],[g,h,i]]
+    res = hillEncode(p, k, 26)
     return {"result" : res}
 
 @app.route("/hill/decode", methods = ["POST"])
 def hillD():
     p = request.json['text']
-    k = request.json['key']
-    res = hillDecode(p, k)
+    m = request.json['key']
+    a,b,c = m['el1'], m['el2'], m['el3']
+    d,e,f = m['el4'], m['el5'], m['el6']
+    g,h,i = m['el7'], m['el8'], m['el9']
+    k = [[a,b,c],[d,e,f],[g,h,i]]
+    res = hillDecode(p, k, 26)
     return {"result" : res}
 
 if __name__ == '__main__':

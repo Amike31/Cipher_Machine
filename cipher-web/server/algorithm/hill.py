@@ -94,7 +94,8 @@ def matInvbyMod(mat, n):
             matInv = (inv*intAdj) % n
     return matInv, exc
     
-def hillEncode(matKey, p, n):
+def hillEncode(p, matKey, n):
+    matKey = np.array(matKey)
     p = strOnlyAlphabets(p)
     dim = len(matKey)
     pNumArr = str2numArr(p)
@@ -112,7 +113,8 @@ def hillEncode(matKey, p, n):
     c = numArr2str(cArr)
     return c
 
-def hillDecode(matKey, c, n):
+def hillDecode(c, matKey, n):
+    matKey = np.array(matKey)
     dim = len(matKey)
     cNumArr = str2numArr(c)
     invKey, exc = matInvbyMod(matKey, n)
@@ -140,15 +142,12 @@ if __name__ == "__main__":
     # print(i)
     # print(matInv)
     
-    a = np.array([[17,17, 5],
+    a = [[17,17, 15],
                 [21,18,21],
-                [ 2, 2,19]])
-    # a = np.array([[3,10],[15,9]])
-    b = np.array([15,0,24])
+                [ 2, 2,19]]
     p = "HELLO WORLD"
-    c = hillEncode(a,p,26)
-    d = 1
-    d = hillDecode(a,c,26)
+    c = hillEncode(p,a,26)
+    d = hillDecode(c,a,26)
     print("Pesan:",p)
     print("encrp:",c)
     print("decrp:",d)

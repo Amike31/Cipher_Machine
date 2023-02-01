@@ -81,7 +81,7 @@ def affineDecode(c, k):
 if __name__ == "__main__":
     # DEBUGGING --------------------------------
     p = "i love u 3000"
-    k = 2 , 1
+    k = 3 , 1
     c = affineEncode(p,k)
     pp = affineDecode(c,k)
     print(f'Pesan: {p}')
