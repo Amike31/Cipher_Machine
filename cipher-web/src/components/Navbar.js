@@ -9,24 +9,24 @@ export default function Navbar() {
         Cipherian
       </Link>
       <ul>
-        <CustomLink to="/Vigenere-Standard">Vigenere Standard</CustomLink>
-        <CustomLink to="/Vigenere-AutoKey">Vigenere AutoKey</CustomLink>
-        <CustomLink to="/Vigenere-Extended">Vigenere Extended</CustomLink>
-        <CustomLink to="/Playfair">Playfair</CustomLink>
-        <CustomLink to="/Hill">Hill</CustomLink>
-        <CustomLink to="/Affine">Affine</CustomLink>
+        <CustomLink to="/Vigenere-Standard" children="Vigenere Standard" />
+        <CustomLink to="/Vigenere-AutoKey" children="Vigenere AutoKey" />
+        <CustomLink to="/Vigenere-Extended" children="Vigenere Extended" />
+        <CustomLink to="/Playfair" children="Playfair" />
+        <CustomLink to="/Hill" children="Hill" />
+        <CustomLink to="/Affine" children="Affine" />
       </ul>
     </nav>
   )
 }
 
-function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, children }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
   return (
     <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
+      <Link to={to} >
         {children}
       </Link>
     </li>

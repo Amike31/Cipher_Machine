@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputFormula } from '../InputKey';
+import { InputFormula } from '../components/Form';
 
 function Playfair() {
   const [textP, setTextP] = useState('');

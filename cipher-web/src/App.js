@@ -2,12 +2,12 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
-import Affine from './components/Pages/Affine';
-import Hill from './components/Pages/Hill';
-import Playfair from './components/Pages/Playfair';
-import Standard from './components/Pages/Vigenere_Standard';
-import Extended from './components/Pages/Vigenere_Extended';
-import AutoKey from './components/Pages/Vigenere_AutoKey';
+import Affine from './Pages/Affine';
+import Hill from './Pages/Hill';
+import Playfair from './Pages/Playfair';
+import Standard from './Pages/Vigenere_Standard';
+import Extended from './Pages/Vigenere_Extended';
+import AutoKey from './Pages/Vigenere_AutoKey';
 
 function App() {
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputMatrix } from '../InputKey';
+import { InputMatrix } from '../components/Form';
 
 function Hill() {
   const [textP, setTextP] = useState('');

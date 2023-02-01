@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { InputString } from '../InputKey';
+import { InputString } from '../components/Form';
 
-function Playfair() {
+function Standard() {
   const [textP, setTextP] = useState('');
   const [keyP, setKeyP] = useState('');
   const [resultP, setResultP] = useState('');
@@ -37,4 +37,4 @@ function Playfair() {
   );
 }
 
-export default Playfair;
+export default Standard;

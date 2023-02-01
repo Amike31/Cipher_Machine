@@ -95,17 +95,11 @@ def playfairAlgo(p,k,type):
     for bigram in allBigram:
         ret += bigramShifted(bigram,key,type)
     return ret
-
-def playfairEncode(p,k):
-    return playfairAlgo(p,k,"e")
-
-def playfairDecode(p,k):
-    return playfairAlgo(p,k,"d").replace("X", "")
     
 if __name__ == "__main__":
     kw = "nama saya adalah beni subianto saudara dari sukiatmojo zainudin xaviec"
     p = "temui ibu nanti malam ya"
-    # k = remove_duplicates(kw)
+    # k = remove_duplicates(kw)   
     # print(k)
     # k = add_alphabets(k)
     # print(k)
@@ -113,7 +107,7 @@ if __name__ == "__main__":
     # bg = makeBigramArr(p)
     # print(bg)
     print(p)
-    c = playfairEncode(p,kw)
+    c = playfairAlgo(p,kw,"e")
     print(c)
-    ress = playfairDecode(c,kw)
+    ress = playfairAlgo(p,kw,"d").replace("X", "")
     print(ress)

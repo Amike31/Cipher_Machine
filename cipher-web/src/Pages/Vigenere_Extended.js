@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { InputString } from '../InputKey';
+import { InputString } from '../components/Form';
 
-function AutoKey() {
+function Extended() {
   const [textP, setTextP] = useState('');
   const [keyP, setKeyP] = useState('');
   const [resultP, setResultP] = useState('');
@@ -37,4 +37,4 @@ function AutoKey() {
   );
 }
 
-export default AutoKey;
+export default Extended;

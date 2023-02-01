@@ -1,42 +1,34 @@
 import React, { useState } from 'react';
-import './InputKey.css';
+import Button from './Button';
+import InputBox from './InputBox';
+import OutputBox from './OutputBox';
 
-function InputString(props) {
+function InputString({children, endpoint, setResult, result}) {
   const [text, setText] = useState('');
+  const [key, setKey] = useState('');
   function handleTextChange(event) {
-      setText(event.target.value);
-  }
-
-  const [key, setKey] = useState();
-  function handleKeyChange(event) {
     setKey(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    props.handleCompute(text, key);
   }
 
   return (
     <div>
       <div className="InputForm">    
-        <form onSubmit={handleSubmit}>
-          <div className='text'>Enter Your Text :</div>
-          <textarea type="text" name='inputtext' value={text} onChange={handleTextChange} placeholder="Put Your Text Here..!" />
-          <p>Input value: {text} </p>
-          <div className='Key'> 
-            <div className='text'>Enter Your Key :</div>
-            <input type="text" name="keyString" value={key} onChange={handleKeyChange} placeholder="Key can be a string.." />
-            <p>Input value: {key}</p>
-          </div>  
-          <button type="submit">Submit</button>
-        </form>
+        <div className='text'>Enter Your Text :</div>
+        <InputBox text={text} setText={setText}/>
+        <p>Input value: {text} </p>
+        <div className='Key'> 
+          <div className='text'>Enter Your Key :</div>
+          <textarea onChange={handleTextChange} value={key} rows={10} placeholder="Key Can be A String..!" />
+          <p>Input value: {key}</p>
+        </div>  
+        <Button children={children} endpoint={endpoint} text={text} kunci={key} setResult={setResult} />
       </div>
       <div className="OutputForm">
-        <div className='IOtext'>
+        {/* <div className='IOtext'>
             <div className='text'>Result :</div>
             <textarea type='text' name='outputtext' value={props.result} placeholder="The Result Will be Aappeared Here..!"></textarea>
-        </div>
+        </div> */}
+        <OutputBox result={result} />
       </div>
     </div>
   );
@@ -62,7 +54,7 @@ function InputFormula(props) {
   return (
     <div>
       <div className="InputForm">    
-        <form onSubmit={handleSubmit}>
+        
           <div className='text'>Enter Your Text :</div>
           <textarea type="text" name='inputtext' value={text} onChange={handleTextChange} placeholder="Put Your Text Here..!" />
           <p>Input value: {text} </p>
@@ -75,8 +67,8 @@ function InputFormula(props) {
             </label>
             <p>Input value: {formula.formula1}X + {formula.formula2}</p>
           </div>  
-          <button type="submit">Submit</button>
-        </form>
+          <button />
+        
       </div>
       <div className="OutputForm">
         <div className='IOtext'>
@@ -111,7 +103,7 @@ function InputMatrix(props) {
   return (
     <div>
       <div className="InputForm">    
-        <form onSubmit={handleSubmit}>
+        
           <div className='text'>Enter Your Text :</div>
           <textarea type="text" name='inputtext' value={text} onChange={handleTextChange} placeholder="Put Your Text Here..!" />
           <p>Input value: {text} </p>
@@ -137,8 +129,8 @@ function InputMatrix(props) {
             <p>{el.el4} {el.el5} {el.el6}</p>
             <p>{el.el7} {el.el8} {el.el9}</p>
           </div>
-          <button type="submit">Submit</button>
-        </form>
+          <button />
+        
       </div>
       <div className="OutputForm">
         <div className='IOtext'>
