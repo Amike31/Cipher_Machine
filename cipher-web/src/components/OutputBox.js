@@ -22,7 +22,7 @@ function OutputBox({result}){
                 <div>
                     <button onClick={handleSave}>Save</button>
                 </div>
-            </div>
+            </div>  
             <div>
                 <div className='text'>Your Result:</div>
                 <textarea onChange={handleChange} rows={8} cols={30} placeholder="Your Result will be Appeared Here..!" value={result} />

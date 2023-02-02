@@ -49,12 +49,14 @@ function InputFormula({children, endpoint, setResult, result, title}) {
           <InputBox text={text} setText={setText}/>
         </div> 
         <div className='Key boxItem'> 
-          <label>
-              {pre}
+          <div className='text'>
+            {pre}
+            <div className='formula'>
               <input type="number" name='formula1' value={formula.formula1} onChange={handleFormulaChange} placeholder="3" />
               {mid}
               <input type="number" name='formula2' value={formula.formula2} onChange={handleFormulaChange} placeholder="1" />
-          </label>
+            </div>
+          </div>
         </div>
         <div className='OutputForm boxItem'>
           <OutputBox result={result} />
