@@ -4,24 +4,23 @@ import { InputFormula } from '../components/Form';
 function Playfair() {
   const [resultP, setResultP] = useState('');
   const [resultC, setResultC] = useState('');
-
+  const title1 = `<<-  Encryption  ->>`;
+  const title2 = `<<-  Decryption  ->>`;
+  
   return (
   <div className="App">
-      <div className='cryptPart'>
-        <h1>Encrypt Your Plaintext</h1>
-        <InputFormula children="ENCRYPT"
-         result={resultP}
-         endpoint="affine/encode"
-         setResult={setResultP} />
-      </div>
+    <h1>AFFINE CIPHER</h1>
+      <InputFormula children="ENCRYPT"
+        result={resultP}
+        endpoint="affine/encode"
+        setResult={setResultP}
+        title={title1} />
       <br />
-      <div className='cryptPart'>
-        <h1>Decrypt Your Plaintext</h1>
-        <InputFormula children="DECRYPT"
-         result={resultC}
-         endpoint="affine/decode"
-         setResult={setResultC} />
-      </div>
+      <InputFormula children="DECRYPT"
+        result={resultC}
+        endpoint="affine/decode"
+        setResult={setResultC}
+        title={title2} />
     </div>
   );
 }

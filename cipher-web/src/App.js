@@ -12,7 +12,7 @@ import AutoKey from './Pages/Vigenere_AutoKey';
 function App() {
 
   return (
-    <div className="App">
+    <div className="Alls">
       <Navbar />
       <div className="container">
         <Routes>

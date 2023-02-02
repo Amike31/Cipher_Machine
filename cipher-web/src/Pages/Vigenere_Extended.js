@@ -4,24 +4,23 @@ import { InputString } from '../components/Form';
 function Extended() {
   const [resultP, setResultP] = useState('');
   const [resultC, setResultC] = useState('');
-
+  const title1 = `<<-  Encryption  ->>`;
+  const title2 = `<<-  Decryption  ->>`;
+  
   return (
     <div className="App">
-      <div className='cryptPart'>
-        <h1>Encrypt Your Plaintext</h1>
-        <InputString children="ENCRYPT"
-         result={resultP}
-         endpoint="extendVigenere/encode"
-         setResult={setResultP} />
-      </div>
+      <h1>EXTENDED VIGENERE CIPHER</h1>
+      <InputString children="ENCRYPT"
+        result={resultP}
+        endpoint="extendVigenere/encode"
+        setResult={setResultP}
+        title={title1}/>
       <br />
-      <div className='cryptPart'>
-        <h1>Decrypt Your Plaintext</h1>
-        <InputString children="DECRYPT"
-         result={resultC}
-         endpoint="extendVigenere/decode"
-         setResult={setResultC} />
-      </div>
+      <InputString children="DECRYPT"
+        result={resultC}
+        endpoint="extendVigenere/decode"
+        setResult={setResultC} 
+        title={title2}/>
     </div>
   );
 }

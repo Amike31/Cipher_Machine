@@ -11,7 +11,11 @@ function Button({children, endpoint, text, kunci, setResult}) {
             .then((response) => {setResult(response.data.result);console.log(response.data.result)})
     }
 
-    return <button onClick={handleSubmit}>{children}</button>
+    return (
+        <div className='submit-btn' >
+            <button onClick={handleSubmit}>{children}</button>
+        </div>
+    )
 }
 
 export default Button;
