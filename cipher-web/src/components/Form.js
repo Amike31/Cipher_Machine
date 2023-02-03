@@ -6,6 +6,7 @@ import FileUpload from './UploadFile';
 
 function InputString({children, endpoint, setResult, result, title}) {
   const [text, setText] = useState('');
+  const [fileType, setFileType] = useState('');
   const [key, setKey] = useState('');
   function handleTextChange(event) {
     setKey(event.target.value);
@@ -18,14 +19,14 @@ function InputString({children, endpoint, setResult, result, title}) {
         <div className='InputForm boxItem'>
           <div className='text'>Enter Your Text :</div>
           <InputBox text={text} setText={setText}/>
-          <FileUpload setText={setText}/>
+          <FileUpload setText={setText} setFileType={setFileType}/>
         </div>
         <div className='Key boxItem'> 
           <div className='text'>Enter Your Key :</div>
           <textarea onChange={handleTextChange} value={key} rows={8} cols={30} placeholder="Key Can be A String..!" />
         </div>
         <div className='OutputForm boxItem'>
-          <OutputBox result={result} />
+          <OutputBox result={result} fileType={fileType} />
         </div>
       </div>
       <Button children={children} endpoint={endpoint} text={text} kunci={key} setResult={setResult} />
@@ -49,7 +50,7 @@ function InputFormula({children, endpoint, setResult, result, title}) {
         <div className='InputForm boxItem'>
           <div className='text'>Enter Your Text :</div>
           <InputBox text={text} setText={setText}/>
-          <FileUpload />
+          <FileUpload setText={setText}/>
         </div> 
         <div className='Key boxItem'> 
           <div className='text'>
@@ -89,7 +90,7 @@ function InputMatrix({children, endpoint, setResult, result, title}) {
           <div className='InputForm boxItem'>
             <div className='text'>Enter Your Text :</div>
             <InputBox text={text} setText={setText}/>
-            <FileUpload />
+            <FileUpload setText={setText}/>
           </div> 
           <div className='Key boxItem'> 
             <div className='text'> Enter Your Matrix :</div>
