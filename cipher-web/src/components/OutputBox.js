@@ -2,13 +2,16 @@ import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FileSaver from 'file-saver';
 
-function OutputBox({result}){
+function OutputBox({result, fileType}){
     function handleChange(event) {
         result = result || {};
     }
     function handleSave() {
-        const blob = new Blob([result], {type: "text/plain;charset=utf-8"});
-        FileSaver.saveAs(blob, "result.txt");
+        const buffer = Uint8Array.from(result, c => c.charCodeAt(0));
+        const blob = new Blob([buffer], {type: fileType});
+        let name = 'result.' + fileType;
+        console.log(fileType);
+        FileSaver.saveAs(blob, {name});
       }
 
     return (

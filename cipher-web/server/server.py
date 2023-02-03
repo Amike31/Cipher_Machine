@@ -31,14 +31,14 @@ def vigenereD():
 
 @app.route("/extendVigenere/encode", methods = ["POST"])
 def extendVigenereE():
-    p = request.json['text'].replace('\n', '')
+    p = request.json['text']
     k = request.json['key'].replace('\n', '')
     res = extendVigenereEncode(p, k)
     return {"result" : res}
 
 @app.route("/extendVigenere/decode", methods = ["POST"])
 def extendVigenereD():
-    p = request.json['text'].replace('\n', '')
+    p = request.json['text']
     k = request.json['key'].replace('\n', '')
     res = extendVigenereDecode(p, k)
     return {"result" : res}

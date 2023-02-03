@@ -46,6 +46,63 @@ def replacePair(strOnly):
             strOnly[i] = 'ew'
         elif (strOnly[i] == 'ZC'):
             strOnly[i] = 'we'
+        elif (strOnly[i] =='MW'):
+            strOnly[i] = 'ov'
+        elif (strOnly[i] == 'WM'):
+            strOnly[i] = 'vo'
+        elif (strOnly[i] =='BU'):
+            strOnly[i] = 'nt'
+        elif (strOnly[i] == 'UB'):
+            strOnly[i] = 'tn'
+        elif (strOnly[i] =='OP'):
+            strOnly[i] = 'mo'
+        elif (strOnly[i] == 'PO'):
+            strOnly[i] = 'om'
+        elif (strOnly[i] =='FT'):
+            strOnly[i] = 'an'
+        elif (strOnly[i] == 'TF'):
+            strOnly[i] = 'na'
+        elif (strOnly[i] =='FB'):
+            strOnly[i] = 'en'
+        elif (strOnly[i] == 'BF'):
+            strOnly[i] = 'ne'
+        elif (strOnly[i] =='MO'):
+            strOnly[i] = 'sm'
+        elif (strOnly[i] == 'OM'):
+            strOnly[i] = 'ms'
+        elif (strOnly[i] =='WU'):
+            strOnly[i] = 'ow'
+        elif (strOnly[i] == 'UW'):
+            strOnly[i] = 'wo'
+        elif (strOnly[i] =='AC'):
+            strOnly[i] = 'ea'
+        elif (strOnly[i] == 'CA'):
+            strOnly[i] = 'ae'
+        elif (strOnly[i] =='LV'):
+            strOnly[i] = 'am'
+        elif (strOnly[i] == 'VL'):
+            strOnly[i] = 'ma'
+        elif (strOnly[i] =='MA'):
+            strOnly[i] = 'lt'
+        elif (strOnly[i] == 'AM'):
+            strOnly[i] = 'tl'
+        elif (strOnly[i] =='MU'):
+            strOnly[i] = 'ot'
+        elif (strOnly[i] == 'UM'):
+            strOnly[i] = 'to'
+        elif (strOnly[i] =='HZ'):
+            strOnly[i] = 'es'
+        elif (strOnly[i] == 'ZH'):
+            strOnly[i] = 'se'
+        elif (strOnly[i] =='CS'):
+            strOnly[i] = 'eo'
+        elif (strOnly[i] == 'SC'):
+            strOnly[i] = 'oe'
+        elif (strOnly[i] =='LA'):
+            strOnly[i] = 'at'
+        elif (strOnly[i] == 'Al'):
+            strOnly[i] = 'ta'
+        
     return strOnly
 
 def combinePair(strOnly):
