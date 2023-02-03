@@ -18,7 +18,7 @@ function InputString({children, endpoint, setResult, result, title}) {
         <div className='InputForm boxItem'>
           <div className='text'>Enter Your Text :</div>
           <InputBox text={text} setText={setText}/>
-          <FileUpload />
+          <FileUpload setText={setText}/>
         </div>
         <div className='Key boxItem'> 
           <div className='text'>Enter Your Key :</div>
