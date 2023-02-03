@@ -44,7 +44,7 @@ def affineEncode(p, k):
     m, b = k
     c = ""
     if (modInv(m,n) == 0):
-        c = "WARNING.!! TIDAK TERDAPAT BALIKAN MODULO..!\n"
+        c = "WARNING.!! TIDAK TERDAPAT BALIKAN MODULO..!\n\n"
     
     pNumArr = str2numArr(p)
     cArr = []
@@ -81,7 +81,7 @@ def affineDecode(c, k):
 if __name__ == "__main__":
     # DEBUGGING --------------------------------
     p = "i love u 3000"
-    k = 3 , 1
+    k = 2 , 1
     c = affineEncode(p,k)
     pp = affineDecode(c,k)
     print(f'Pesan: {p}')

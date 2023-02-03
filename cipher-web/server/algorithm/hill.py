@@ -111,6 +111,10 @@ def hillEncode(p, matKey, n):
         cArr = np.append(cArr,temp)
     
     c = numArr2str(cArr)
+    det = npl.det(matKey)
+    detRound = round(det) % n
+    if det == 0:
+        c = "Tidak terdapat balikan modulo.!\n\n" + c
     return c
 
 def hillDecode(c, matKey, n):
@@ -118,16 +122,19 @@ def hillDecode(c, matKey, n):
     dim = len(matKey)
     cNumArr = str2numArr(c)
     invKey, exc = matInvbyMod(matKey, n)
-    pArr = []
+    if exc != '':
+        p = exc
+    else:
+        pArr = []
 
-    for i in range(0,len(cNumArr),dim):
-        end = min(i+dim, len(cNumArr))
-        key = invKey
-        temp = np.matmul(key,cNumArr[i:end]) % n
-        pArr = np.append(pArr,temp)
-    p = numArr2str(pArr)
-    while p[len(p)-1] == "X":
-        p = p[:len(p)-1]
+        for i in range(0,len(cNumArr),dim):
+            end = min(i+dim, len(cNumArr))
+            key = invKey
+            temp = np.matmul(key,cNumArr[i:end]) % n
+            pArr = np.append(pArr,temp)
+        p = numArr2str(pArr)
+        while p[len(p)-1] == "X":
+            p = p[:len(p)-1]
     return p
     
 if __name__ == "__main__":
@@ -145,6 +152,7 @@ if __name__ == "__main__":
     a = [[17,17, 15],
                 [21,18,21],
                 [ 2, 2,19]]
+    a = [[1,2,3],[4,5,6],[7,8,9]]
     p = "HELLO WORLD"
     c = hillEncode(p,a,26)
     d = hillDecode(c,a,26)
