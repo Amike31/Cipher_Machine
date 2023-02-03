@@ -8,6 +8,7 @@ import Playfair from './Pages/Playfair';
 import Standard from './Pages/Vigenere_Standard';
 import Extended from './Pages/Vigenere_Extended';
 import AutoKey from './Pages/Vigenere_AutoKey';
+import Home from './Pages/Home';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <div className="container">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/Vigenere-Standard" element={<Standard />} />
           <Route path="/Vigenere-AutoKey" element={<AutoKey />} />
           <Route path="/Vigenere-Extended" element={<Extended />} />

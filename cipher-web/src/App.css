@@ -3,6 +3,7 @@
   padding: 0px 12.5%;
   background-image: url('./images/background_img.jpeg');
   background-size: cover;
+  min-height: 100vh;
 }
 
 .boxes {
@@ -28,15 +29,28 @@
 
 .App h1 {
   font-size:40px;
+  text-shadow: 2px 2px 5px rgb(0, 89, 255);
+  padding: 20px 0;
+}
+
+.App h2 {
+  font-size:30px;
+  text-shadow: 2px 2px 5px rgb(162, 0, 221);
+  padding-top: 10px;
+}
+
+.App h1, .App h2 {
   font-weight: 700;
   font-family:'Courier New', Courier, monospace;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgb(0, 89, 255);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding: 20px 0;
+}
+
+.home {
+  padding-top:50px;
 }
 
 .cryptPart h1 {
