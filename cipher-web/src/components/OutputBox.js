@@ -8,7 +8,7 @@ function OutputBox({result}){
     }
     function handleSave() {
         const blob = new Blob([result], {type: "text/plain;charset=utf-8"});
-        FileSaver.saveAs(blob, "example.txt");
+        FileSaver.saveAs(blob, "result.txt");
       }
 
     return (

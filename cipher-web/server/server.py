@@ -109,5 +109,11 @@ def hillD():
     res = hillDecode(p, k, 26)
     return {"result" : res}
 
+@app.route("/http://localhost:5000/upload", methods = ["POST"])
+def upload():
+    file = request.files['file']
+    file.save(file.filename)
+    return {"result" : "success"}
+
 if __name__ == '__main__':
     app.run(debug=True)

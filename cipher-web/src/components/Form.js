@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from './Button';
 import InputBox from './InputBox';
 import OutputBox from './OutputBox';
+import FileUpload from './UploadFile';
 
 function InputString({children, endpoint, setResult, result, title}) {
   const [text, setText] = useState('');
@@ -17,7 +18,8 @@ function InputString({children, endpoint, setResult, result, title}) {
         <div className='InputForm boxItem'>
           <div className='text'>Enter Your Text :</div>
           <InputBox text={text} setText={setText}/>
-        </div> 
+          <FileUpload />
+        </div>
         <div className='Key boxItem'> 
           <div className='text'>Enter Your Key :</div>
           <textarea onChange={handleTextChange} value={key} rows={8} cols={30} placeholder="Key Can be A String..!" />
@@ -47,6 +49,7 @@ function InputFormula({children, endpoint, setResult, result, title}) {
         <div className='InputForm boxItem'>
           <div className='text'>Enter Your Text :</div>
           <InputBox text={text} setText={setText}/>
+          <FileUpload />
         </div> 
         <div className='Key boxItem'> 
           <div className='text'>
@@ -86,6 +89,7 @@ function InputMatrix({children, endpoint, setResult, result, title}) {
           <div className='InputForm boxItem'>
             <div className='text'>Enter Your Text :</div>
             <InputBox text={text} setText={setText}/>
+            <FileUpload />
           </div> 
           <div className='Key boxItem'> 
             <div className='text'> Enter Your Matrix :</div>
